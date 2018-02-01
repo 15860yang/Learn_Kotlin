@@ -1,0 +1,32 @@
+Koltin 中的类可以有一个主构造器以及多个次构造器，主构造器是类头部的一部分，位于类名称之后:
+    class Person constructor(firstName: String) {}  一般constructor可省略
+
+    kotlin中的主构造器不能有代码模块，代码模块可以放在init（初始化）代码块
+
+    从构造器写在类中   用constructor关键字说明
+
+    如果类有主构造函数，每个次构造函数都要，或直接或间接通过另一个次构造函数代理主构造函数。
+    在同一个类中代理另一个构造函数使用 this 关键字：
+
+
+getter和setter
+    var allByDefault: Int? // 错误: 需要一个初始化语句, 默认实现了 getter 和 setter 方法
+    var initialized = 1    // 类型为 Int, 默认实现了 getter 和 setter
+    val simple: Int?       // 类型为 Int ，默认实现 getter ，但必须在构造函数中初始化
+    val inferredType = 1   // 类型为 Int 类型,默认实现 getter
+
+嵌套类和内部类
+    内部类需要用inner关键字标识    内部类可以通过var a = this@ + 外部类名 来得到外部类的成员变量总和然后  a.+外部成员变量名字获取外部变量
+
+
+类的修饰符
+    abstract    // 抽象类
+    final       // 类不可继承，默认属性
+    enum        // 枚举类
+    open        // 类可继承，类默认是final的
+    annotation  // 注解类
+
+    private    // 仅在同一个文件中可见
+    protected  // 同一个文件中或子类可见
+    public     // 所有调用的地方都可见
+    internal   // 同一个模块中可见
